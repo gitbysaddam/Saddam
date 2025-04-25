@@ -1,0 +1,88 @@
+<!DOCTYPE html><html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>তুমি হলে AI...</title>
+  <style>
+    body {
+      background-color: #ffe4ec;
+      font-family: 'Kalpurush', sans-serif;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 400px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      background-color: #ff4da6;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #e03e94;
+    }
+    .bio {
+      white-space: pre-line;
+      margin-top: 20px;
+      color: #d63384;
+      font-weight: bold;
+    }
+    .gift {
+      margin-top: 10px;
+      font-size: 1.1em;
+      color: #6f1d7c;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>তুমি হলে AI...</h2>
+    <input type="text" id="name" placeholder="তোমার নাম">
+    <input type="text" id="likes" placeholder="তুমি কী পছন্দ করো?">
+    <input type="text" id="dream" placeholder="তোমার স্বপ্ন কী?">
+    <button onclick="generateBio()">তোমার বায়ো বানাও</button><div class="bio" id="bio"></div>
+<div class="gift" id="gift"></div>
+
+  </div>  <script>
+    function generateBio() {
+      const name = document.getElementById('name').value;
+      const likes = document.getElementById('likes').value;
+      const dream = document.getElementById('dream').value;
+
+      const lines = [
+        `${name} হলো এমন একজন,`,
+        `যার পছন্দ ${likes}, ঠিক যেমন নরম সুরে বাজে বাঁশির তান।`,
+        `তার স্বপ্ন ${dream},`,
+        `আর তার হাসি? সেটা যেন দুপুরের রোদে গলে যাওয়া আম্রপালি!`
+      ];
+      document.getElementById('bio').innerText = lines.join('\n');
+
+      const gifts = [
+        "একটা চকলেট নদী!",
+        "তোমার নামে একখানা তারা!",
+        "একটা রঙিন বেলুনের শহর!",
+        "একটা বিশাল কবিতার বই!",
+        "একটা হাসির রাজ্য, শুধু তোমার জন্য!"
+      ];
+      const randomGift = gifts[Math.floor(Math.random() * gifts.length)];
+      document.getElementById('gift').innerText = `AI তোমার জন্য উপহার এনেছে: ${randomGift}`;
+    }
+  </script></body>
+                                                                                     </html>
